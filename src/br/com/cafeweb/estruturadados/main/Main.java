@@ -32,5 +32,12 @@ public class Main {
         for (int i = 0; i < vetor.size(); i++) {
             System.out.println(vetor.getVetor(i));
         }
+
+        System.out.println("============ Adicionando dados entre os elementos =================");
+        vetor.addIndex(3, 12);
+
+        for (int i = 0; i < vetor.size(); i++) {
+            System.out.println(vetor.getVetor(i));
+        }
     }
 }
