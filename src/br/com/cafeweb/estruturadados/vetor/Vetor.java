@@ -41,8 +41,10 @@ public class Vetor<T> {
             this.vetor = new Object[arrayStart.length + arrayEnd.length];
             System.arraycopy(arrayStart, 0, this.vetor, 0, arrayStart.length);
             System.arraycopy(arrayEnd, 0, this.vetor, arrayStart.length, arrayEnd.length);
+            this.count++;
         } else {
             this.vetor[index] = element;
+            this.count++;
         }
     }
 
@@ -71,5 +73,15 @@ public class Vetor<T> {
         }
 
         return false;
+    }
+
+    public int searchIndex(T element) {
+        for (int i = 0; i < size(); i++) {
+            if (this.vetor[i] != null && this.vetor[i].equals(element)) {
+                return i;
+            }
+        }
+
+        return -1;
     }
 }

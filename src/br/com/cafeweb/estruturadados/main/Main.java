@@ -43,7 +43,7 @@ public class Main {
         System.out.println("================== Verificando se um valor existe no vetor ========================");
 
         if (vetor.has(12)) {
-            System.out.println("Existe");
+            System.out.printf("Existe e está na posição %d ", vetor.searchIndex(12));
         } else {
             System.out.println("Não existe");
         }
