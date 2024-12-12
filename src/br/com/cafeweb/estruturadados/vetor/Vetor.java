@@ -85,20 +85,27 @@ public class Vetor<T> {
         return -1;
     }
 
-    public void remove (T element) {
-        //10,20,30,40,50
-        // element 40
-        var index = this.searchIndex(element);
-
-        if (index < 0) {
+    public void removeIndex(int index) {
+        if (index < 0 || index >= this.size()) {
             throw new ArrayIndexOutOfBoundsException(index);
         }
 
         Object[] arrayStart = Arrays.copyOfRange(this.vetor, 0, index);
         Object[] arrayEnd = Arrays.copyOfRange(this.vetor, index + 1, this.size());
         this.vetor = new Object[this.size() - 1];
-        System.arraycopy(arrayStart, 0, this.vetor, 0 , arrayStart.length);
+        System.arraycopy(arrayStart, 0, this.vetor, 0, arrayStart.length);
         System.arraycopy(arrayEnd, 0, this.vetor, arrayStart.length, arrayEnd.length);
-        count --;
+        count--;
+    }
+
+    public void remove(T element) {
+
+        var index = this.searchIndex(element);
+
+        if (index < 0) {
+            throw new ArrayIndexOutOfBoundsException(index);
+        }
+
+        this.removeIndex(index);
     }
 }
