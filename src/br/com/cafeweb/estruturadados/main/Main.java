@@ -47,5 +47,13 @@ public class Main {
         } else {
             System.out.println("Não existe");
         }
+
+        System.out.println("====================== Removendo itens de um array ================================");
+
+        vetor.remove(12);
+
+        for (int i = 0; i < vetor.size(); i++) {
+            System.out.println(vetor.getVetor(i));
+        }
     }
 }
