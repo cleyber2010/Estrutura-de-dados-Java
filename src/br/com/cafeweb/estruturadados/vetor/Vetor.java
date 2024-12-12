@@ -34,8 +34,6 @@ public class Vetor<T> {
         }
 
         if (this.vetor[index] != null) {
-            //10,20,30,40,50
-            //index 2
             Object[] arrayStart = Arrays.copyOfRange(this.vetor, 0, index); //10,20
             Object[] arrayEnd = Arrays.copyOfRange(this.vetor, index, vetor.length); //30,40,50
             arrayStart = Arrays.copyOf(arrayStart, arrayStart.length + 1);
@@ -65,5 +63,13 @@ public class Vetor<T> {
         return vetor.length;
     }
 
+    public boolean has(T element) {
+        for (int i = 0; i < size(); i++) {
+            if (this.vetor[i] != null && this.vetor[i].equals(element)) {
+                return true;
+            }
+        }
 
+        return false;
+    }
 }

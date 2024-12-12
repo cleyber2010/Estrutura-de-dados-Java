@@ -39,5 +39,13 @@ public class Main {
         for (int i = 0; i < vetor.size(); i++) {
             System.out.println(vetor.getVetor(i));
         }
+
+        System.out.println("================== Verificando se um valor existe no vetor ========================");
+
+        if (vetor.has(12)) {
+            System.out.println("Existe");
+        } else {
+            System.out.println("Não existe");
+        }
     }
 }
