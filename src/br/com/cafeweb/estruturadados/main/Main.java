@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("1. Vetores");
-        System.out.println("2. Vetores");
+        System.out.println("2. Listas");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -73,8 +73,8 @@ public class Main {
         numbers.insertNo(40);
         numbers.insertNo(50);
 
-        numbers.listData();
+        //numbers.listData();
 
-
+        System.out.println(numbers);
     }
 }

@@ -47,4 +47,24 @@ public class ListaLigada<T> {
     public int size() {
         return this.size;
     }
+
+    @Override
+    public String toString() {
+        if (this.isEmpty()) {
+            return "Lista vazia []";
+        }
+        StringBuilder sb = new StringBuilder();
+        sb.append("[");
+        while (this.first.getNext() != null) {
+            sb.append((this.first.getElement() != null ? this.first.getElement().toString() : "<nulo>"));
+
+            if (this.first.getNext().getNext() != null) {
+                sb.append(",");
+            }
+
+            this.first = first.getNext();
+        }
+        sb.append("]");
+        return sb.toString();
+    }
 }
