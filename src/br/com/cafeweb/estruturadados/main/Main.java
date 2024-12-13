@@ -1,5 +1,7 @@
 package br.com.cafeweb.estruturadados.main;
 
+import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
+import br.com.cafeweb.estruturadados.listasligadas.No;
 import br.com.cafeweb.estruturadados.vetor.Vetor;
 
 import java.util.Scanner;
@@ -7,6 +9,7 @@ import java.util.Scanner;
 public class Main {
     public static void main(String[] args) {
         System.out.println("1. Vetores");
+        System.out.println("2. Vetores");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -14,6 +17,9 @@ public class Main {
         switch (option) {
             case "1":
                 vetor();
+                break;
+            case "2":
+                lista();
                 break;
         }
     }
@@ -56,5 +62,19 @@ public class Main {
         for (int i = 0; i < vetor.size(); i++) {
             System.out.println(vetor.getVetor(i));
         }
+    }
+
+    public static void lista() {
+        ListaLigada<Integer> numbers = new ListaLigada<Integer>();
+
+        numbers.insertNo(10);
+        numbers.insertNo(20);
+        numbers.insertNo(30);
+        numbers.insertNo(40);
+        numbers.insertNo(50);
+
+        numbers.listData();
+
+
     }
 }

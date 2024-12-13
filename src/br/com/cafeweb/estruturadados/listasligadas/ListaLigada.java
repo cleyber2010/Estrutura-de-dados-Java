@@ -25,11 +25,26 @@ public class ListaLigada<T> {
         this.size++;
     }
 
-    public T getListaLigada() {
-        return (T) first;
+    public No<T> getListaLigada() {
+        return this.first;
+    }
+
+    public void listData() {
+        if (this.isEmpty()) {
+            return;
+        }
+
+        for (int i = 0; i < this.size; i++) {
+            System.out.println(this.first.getElement());
+            this.first = first.getNext();
+        }
     }
 
     public boolean isEmpty() {
         return this.size == 0;
+    }
+
+    public int size() {
+        return this.size;
     }
 }
