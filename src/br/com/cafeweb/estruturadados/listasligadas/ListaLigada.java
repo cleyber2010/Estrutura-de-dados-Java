@@ -48,6 +48,45 @@ public class ListaLigada<T> {
         return this.size;
     }
 
+    public void insertIn(int index, T element) {
+        if (index < 0 && index >= this.size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.size);
+        }
+        No<T> actual = this.getNo(index);
+        No<T> newNo = new No<T>(element);
+
+        if (index == 0) {
+            newNo.setNext(actual);
+            this.first = newNo;
+        } else if (index == this.size - 1) {
+            actual.setNext(newNo);
+            this.last = newNo;
+        } else {
+            getNo(index - 1).setNext(newNo);
+            newNo.setNext(actual);
+        }
+
+        this.size++;
+    }
+
+    public No<T> getNo(int index) {
+        if (index < 0 && index >= this.size) {
+            throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.size);
+        }
+
+        No<T> result = null;
+
+        for (int i = 0; i <= index; i++) {
+            if (i == 0) {
+                result = this.first;
+            } else {
+                result = result.getNext();
+            }
+        }
+
+        return result;
+    }
+
     @Override
     public String toString() {
         if (this.isEmpty()) {

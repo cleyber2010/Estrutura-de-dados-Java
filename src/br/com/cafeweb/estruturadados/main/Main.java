@@ -74,7 +74,7 @@ public class Main {
         numbers.insertNo(50);
 
         //numbers.listData();
-
+        numbers.insertIn(3, 100);
         System.out.println(numbers);
     }
 }
