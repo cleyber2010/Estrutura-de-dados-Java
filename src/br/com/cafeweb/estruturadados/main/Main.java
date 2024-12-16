@@ -1,7 +1,6 @@
 package br.com.cafeweb.estruturadados.main;
 
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
-import br.com.cafeweb.estruturadados.listasligadas.No;
 import br.com.cafeweb.estruturadados.vetor.Vetor;
 
 import java.util.Scanner;

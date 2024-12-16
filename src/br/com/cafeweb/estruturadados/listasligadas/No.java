@@ -1,6 +1,6 @@
 package br.com.cafeweb.estruturadados.listasligadas;
 
-public class No<T> {
+class No<T> {
     private T element;
     private No<T> next;
 
