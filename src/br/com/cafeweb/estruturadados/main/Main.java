@@ -1,5 +1,6 @@
 package br.com.cafeweb.estruturadados.main;
 
+import br.com.cafeweb.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
 import br.com.cafeweb.estruturadados.vetor.Vetor;
 
@@ -9,6 +10,7 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("1. Vetores");
         System.out.println("2. Listas");
+        System.out.println("3. Lista Dupla");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -19,6 +21,9 @@ public class Main {
                 break;
             case "2":
                 lista();
+                break;
+            case "3":
+                listaDupla();
                 break;
         }
     }
@@ -79,8 +84,28 @@ public class Main {
         System.out.println(numbers.indexOf(40));
         System.out.println(numbers.indexOf(400));
 
-        numbers.removeIndex(6);
+        System.out.println(numbers);
+    }
 
+    public static void listaDupla() {
+
+        ListaDuplamenteLigada<Integer> numbers = new ListaDuplamenteLigada<>();
+
+        numbers.insertNo(10);
+        numbers.insertNo(20);
+        numbers.insertNo(30);
+        numbers.insertNo(40);
+        numbers.insertNo(50);
+
+        numbers.insertIn(4, 60);
+        numbers.insertIn(2, 25);
+        numbers.insertIn(0, 5);
+        //numbers.removeIndex(2);
+
+        System.out.println(numbers.contains(40));
+        System.out.println(numbers.contains(400));
+        System.out.println(numbers.indexOf(40));
+        System.out.println(numbers.indexOf(400));
         System.out.println(numbers);
     }
 }
