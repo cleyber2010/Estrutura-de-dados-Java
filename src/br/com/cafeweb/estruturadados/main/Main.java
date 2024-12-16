@@ -2,6 +2,7 @@ package br.com.cafeweb.estruturadados.main;
 
 import br.com.cafeweb.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
+import br.com.cafeweb.estruturadados.pilhas.Pilha;
 import br.com.cafeweb.estruturadados.vetor.Vetor;
 
 import java.util.Scanner;
@@ -11,6 +12,7 @@ public class Main {
         System.out.println("1. Vetores");
         System.out.println("2. Listas");
         System.out.println("3. Lista Dupla");
+        System.out.println("4. Pilha");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -25,7 +27,12 @@ public class Main {
             case "3":
                 listaDupla();
                 break;
+
+            case "4":
+                pilha();
+                break;
         }
+        scanner.close();
     }
 
     public static void vetor() {
@@ -107,5 +114,16 @@ public class Main {
         System.out.println(numbers.indexOf(40));
         System.out.println(numbers.indexOf(400));
         System.out.println(numbers);
+    }
+
+    public static void pilha() {
+        Pilha<Integer> stack = new Pilha<Integer>();
+        System.out.println(stack.isEmpty());
+        stack.stackUp(10);
+        stack.stackUp(20);
+        stack.stackUp(30);
+        System.out.println(stack.unstack());
+        System.out.println(stack);
+
     }
 }

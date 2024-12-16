@@ -112,6 +112,9 @@ public class ListaDuplamenteLigada<T> {
         return result;
     }
 
+    public T getElement(int index) {
+        return this.getNo(index).getElement();
+    }
 
 
     public void remove(T element) {
