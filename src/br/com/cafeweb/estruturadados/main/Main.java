@@ -73,8 +73,8 @@ public class Main {
         numbers.insertNo(40);
         numbers.insertNo(50);
 
-        //numbers.listData();
-        numbers.insertIn(3, 100);
+        numbers.insertIn(4, 60);
+
         System.out.println(numbers);
     }
 }

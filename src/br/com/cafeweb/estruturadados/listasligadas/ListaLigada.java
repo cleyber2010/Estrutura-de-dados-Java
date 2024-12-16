@@ -49,7 +49,7 @@ public class ListaLigada<T> {
     }
 
     public void insertIn(int index, T element) {
-        if (index < 0 && index >= this.size) {
+        if (index < 0 || index >= this.size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.size);
         }
         No<T> actual = this.getNo(index);
@@ -70,16 +70,17 @@ public class ListaLigada<T> {
     }
 
     public No<T> getNo(int index) {
-        if (index < 0 && index >= this.size) {
+        if (index < 0 || index >= this.size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.size);
         }
 
         No<T> result = null;
-
+        // 0 1 2 3 4 5
+        // i 6
         for (int i = 0; i <= index; i++) {
             if (i == 0) {
                 result = this.first;
-            } else {
+            } else if (result.getNext() != null) {
                 result = result.getNext();
             }
         }
@@ -92,17 +93,21 @@ public class ListaLigada<T> {
         if (this.isEmpty()) {
             return "Lista vazia []";
         }
+        No<T> actual = this.first;
         StringBuilder sb = new StringBuilder();
         sb.append("[");
-        while (this.first.getNext() != null) {
-            sb.append((this.first.getElement() != null ? this.first.getElement().toString() : "<nulo>"));
+        sb.append((actual.getElement() != null) ? actual.getElement().toString() : "null");
+        sb.append(",");
+        while (actual.getNext() != null) {
+            sb.append((actual.getNext().getElement() != null ? actual.getNext().getElement().toString() : "<nulo>"));
 
-            if (this.first.getNext().getNext() != null) {
+            if (actual.getNext().getNext() != null) {
                 sb.append(",");
             }
 
-            this.first = first.getNext();
+            actual = actual.getNext();
         }
+
         sb.append("]");
         return sb.toString();
     }
