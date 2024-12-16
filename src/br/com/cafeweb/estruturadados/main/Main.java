@@ -80,6 +80,8 @@ public class Main {
         System.out.println(numbers.indexOf(40));
         System.out.println(numbers.indexOf(400));
 
+        numbers.removeIndex(6);
+
         System.out.println(numbers);
     }
 }

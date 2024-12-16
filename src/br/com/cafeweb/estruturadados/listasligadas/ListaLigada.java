@@ -107,6 +107,32 @@ public class ListaLigada<T> {
         return result;
     }
 
+    public void remove(T element) {
+        No<T> actual = this.getNo(this.indexOf(element));
+
+        if (actual.getElement() != null && actual.getElement().equals(this.first.getElement())) {
+            No<T> next = this.getNo(this.indexOf(element) + 1);
+            this.first = next;
+            actual.setNext(null);
+        } else if (actual.getElement() != null && actual.getElement().equals(this.last.getElement())) {
+            No<T> previus = this.getNo(this.indexOf(element) - 1);
+            this.last = previus;
+            this.last.setNext(null);
+        } else {
+            No<T> previus = this.getNo(this.indexOf(element) - 1);
+            No<T> next = this.getNo(this.indexOf(element) + 1);
+
+            previus.setNext(next);
+            actual.setNext(null);
+        }
+
+        this.size--;
+    }
+
+    public void removeIndex(int index) {
+        remove(this.getNo(index).getElement());
+    }
+
     @Override
     public String toString() {
         if (this.isEmpty()) {
