@@ -75,6 +75,11 @@ public class Main {
 
         numbers.insertIn(4, 60);
 
+        System.out.println(numbers.contains(40));
+        System.out.println(numbers.contains(400));
+        System.out.println(numbers.indexOf(40));
+        System.out.println(numbers.indexOf(400));
+
         System.out.println(numbers);
     }
 }

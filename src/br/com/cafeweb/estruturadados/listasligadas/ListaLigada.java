@@ -69,14 +69,33 @@ public class ListaLigada<T> {
         this.size++;
     }
 
+    public boolean contains(T element) {
+        for (int i = 0; i < this.size; i++) {
+            No<T> actual = this.getNo(i);
+            if (actual.getElement() != null && actual.getElement().equals(element)) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public int indexOf(T element) {
+        for (int i = 0; i < this.size; i++) {
+            No<T> actual = this.getNo(i);
+            if (actual.getElement() != null && actual.getElement().equals(element)) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     public No<T> getNo(int index) {
         if (index < 0 || index >= this.size) {
             throw new IndexOutOfBoundsException("Index: " + index + ", Size: " + this.size);
         }
 
         No<T> result = null;
-        // 0 1 2 3 4 5
-        // i 6
+
         for (int i = 0; i <= index; i++) {
             if (i == 0) {
                 result = this.first;
