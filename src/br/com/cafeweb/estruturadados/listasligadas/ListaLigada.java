@@ -133,6 +133,10 @@ public class ListaLigada<T> {
         remove(this.getNo(index).getElement());
     }
 
+    public T getElement(int index) {
+        return this.getNo(index).getElement();
+    }
+
     @Override
     public String toString() {
         if (this.isEmpty()) {

@@ -1,5 +1,6 @@
 package br.com.cafeweb.estruturadados.main;
 
+import br.com.cafeweb.estruturadados.filas.Fila;
 import br.com.cafeweb.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
 import br.com.cafeweb.estruturadados.pilhas.Pilha;
@@ -13,6 +14,7 @@ public class Main {
         System.out.println("2. Listas");
         System.out.println("3. Lista Dupla");
         System.out.println("4. Pilha");
+        System.out.println("5. Fila");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -30,6 +32,10 @@ public class Main {
 
             case "4":
                 pilha();
+                break;
+
+            case "5":
+                fila();
                 break;
         }
         scanner.close();
@@ -125,5 +131,16 @@ public class Main {
         System.out.println(stack.unstack());
         System.out.println(stack);
 
+    }
+
+    public static void fila() {
+        Fila<Integer> queue = new Fila<Integer>();
+        System.out.println(queue.isEmpty());
+        queue.enqueue(10);
+        queue.enqueue(20);
+        queue.enqueue(30);
+        System.out.println(queue.dequeue());
+        System.out.println(queue.dequeue());
+        System.out.println(queue);
     }
 }
