@@ -1,5 +1,6 @@
 package br.com.cafeweb.estruturadados.main;
 
+import br.com.cafeweb.estruturadados.conjuntos.Conjunto;
 import br.com.cafeweb.estruturadados.filas.Fila;
 import br.com.cafeweb.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
@@ -15,6 +16,7 @@ public class Main {
         System.out.println("3. Lista Dupla");
         System.out.println("4. Pilha");
         System.out.println("5. Fila");
+        System.out.println("6. Conjuntos (sets)");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -32,9 +34,11 @@ public class Main {
             case "4":
                 pilha();
                 break;
-
             case "5":
                 fila();
+                break;
+            case "6":
+                conjunto();
                 break;
         }
         scanner.close();
@@ -141,5 +145,15 @@ public class Main {
         System.out.println(queue.dequeue());
         System.out.println(queue.dequeue());
         System.out.println(queue);
+    }
+
+    public static void conjunto() {
+        Conjunto<Integer> set = new Conjunto<Integer>();
+        System.out.println(set.isEmpty());
+        System.out.println(set.insert(10));
+        System.out.println(set.insert(10));
+        System.out.println(set.insert(20));
+        System.out.println(set.insert(30));
+        System.out.println(set);
     }
 }

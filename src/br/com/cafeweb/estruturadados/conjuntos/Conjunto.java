@@ -8,6 +8,7 @@ import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
  */
 
 public class Conjunto <T>{
+
     private ListaLigada<T> set;
 
     public Conjunto() {
@@ -38,6 +39,10 @@ public class Conjunto <T>{
 
     public void removeIndex(int index) {
         set.removeIndex(index);
+    }
+
+    public boolean isEmpty() {
+        return set.isEmpty();
     }
 
     private boolean contains(T elemento) {
