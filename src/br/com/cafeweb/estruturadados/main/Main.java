@@ -1,6 +1,7 @@
 package br.com.cafeweb.estruturadados.main;
 
 import br.com.cafeweb.estruturadados.conjuntos.Conjunto;
+import br.com.cafeweb.estruturadados.espalhamento.TabelaEspalhamento;
 import br.com.cafeweb.estruturadados.filas.Fila;
 import br.com.cafeweb.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
@@ -99,6 +100,8 @@ public class Main {
         System.out.println(numbers.contains(400));
         System.out.println(numbers.indexOf(40));
         System.out.println(numbers.indexOf(400));
+
+        System.out.println(numbers.indexOf(40));
 
         System.out.println(numbers);
     }
