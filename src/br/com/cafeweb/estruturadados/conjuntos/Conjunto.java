@@ -2,6 +2,11 @@ package br.com.cafeweb.estruturadados.conjuntos;
 
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
 
+/**
+ * The set data structure does not allow duplicate data
+ * @param <T>
+ */
+
 public class Conjunto <T>{
     private ListaLigada<T> set;
 
