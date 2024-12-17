@@ -5,6 +5,7 @@ import br.com.cafeweb.estruturadados.espalhamento.TabelaEspalhamento;
 import br.com.cafeweb.estruturadados.filas.Fila;
 import br.com.cafeweb.estruturadados.listasligadas.ListaDuplamenteLigada;
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
+import br.com.cafeweb.estruturadados.mapas.Mapa;
 import br.com.cafeweb.estruturadados.pilhas.Pilha;
 import br.com.cafeweb.estruturadados.vetor.Vetor;
 
@@ -18,6 +19,7 @@ public class Main {
         System.out.println("4. Pilha");
         System.out.println("5. Fila");
         System.out.println("6. Conjuntos (sets)");
+        System.out.println("7. Mapas");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -40,6 +42,9 @@ public class Main {
                 break;
             case "6":
                 conjunto();
+                break;
+            case "7":
+                mapa();
                 break;
         }
         scanner.close();
@@ -160,5 +165,18 @@ public class Main {
         System.out.println(set.insert(250));
         System.out.println(set.insert(480));
         System.out.println(set);
+    }
+
+    public static void mapa() {
+        Mapa<String, Integer> mapa = new Mapa<String, Integer>();
+        System.out.println(mapa.isEmpty());
+        System.out.println(mapa.insert("dez", 10));
+        System.out.println(mapa.insert("vinte", 20));
+        System.out.println(mapa.insert("trinta", 30));
+        System.out.println(mapa.insert("quarenta", 40));
+        System.out.println(mapa.getValue("vinte"));
+        System.out.println(mapa.insert("dez", 100));
+        mapa.remove("dez");
+        System.out.println(mapa);
     }
 }

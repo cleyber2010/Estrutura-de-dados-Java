@@ -111,9 +111,12 @@ public class ListaLigada<T> {
         No<T> actual = this.getNo(this.indexOf(element));
 
         if (actual.getElement() != null && actual.getElement().equals(this.first.getElement())) {
-            No<T> next = this.getNo(this.indexOf(element) + 1);
-            this.first = next;
-            actual.setNext(null);
+            if (actual.getNext() != null) {
+                No<T> next = this.getNo(this.indexOf(element) + 1);
+                this.first = next;
+                actual.setNext(null);
+            }
+            this.first = null;
         } else if (actual.getElement() != null && actual.getElement().equals(this.last.getElement())) {
             No<T> previus = this.getNo(this.indexOf(element) - 1);
             this.last = previus;
