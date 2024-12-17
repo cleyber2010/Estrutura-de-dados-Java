@@ -157,6 +157,8 @@ public class Main {
         System.out.println(set.insert(10));
         System.out.println(set.insert(20));
         System.out.println(set.insert(30));
+        System.out.println(set.insert(250));
+        System.out.println(set.insert(480));
         System.out.println(set);
     }
 }

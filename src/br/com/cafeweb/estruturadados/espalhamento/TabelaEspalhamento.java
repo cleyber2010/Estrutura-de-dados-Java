@@ -37,7 +37,7 @@ public class TabelaEspalhamento <T>{
     }
 
     private int generateHash(T elemento) {
-        return elemento.hashCode() % this.categories;
+        return Math.abs(elemento.hashCode() % this.categories);
     }
 
     private boolean contains(T elemento) {
@@ -45,4 +45,10 @@ public class TabelaEspalhamento <T>{
         return category.contains(elemento);
     }
 
+    @Override
+    public String toString() {
+        return "TabelaEspalhamento{" +
+                "spreadTable=" + spreadTable +
+                '}';
+    }
 }

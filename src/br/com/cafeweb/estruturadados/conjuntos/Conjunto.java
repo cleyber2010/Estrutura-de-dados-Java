@@ -1,5 +1,6 @@
 package br.com.cafeweb.estruturadados.conjuntos;
 
+import br.com.cafeweb.estruturadados.espalhamento.TabelaEspalhamento;
 import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
 
 /**
@@ -9,52 +10,22 @@ import br.com.cafeweb.estruturadados.listasligadas.ListaLigada;
 
 public class Conjunto <T>{
 
-    private ListaLigada<T> set;
+    private TabelaEspalhamento<T> set;
 
     public Conjunto() {
-        this.set = new ListaLigada<T>();
+        this.set = new TabelaEspalhamento<>();
     }
 
     public boolean insert(T elemento) {
-
-        if (elemento != null && !this.contains(elemento)) {
-            set.insertNo(elemento);
-            return true;
-        }
-        return false;
-    }
-
-    public boolean insertIn(int index, T elemento) {
-        if (elemento != null && !this.contains(elemento)) {
-            set.insertIn(index, elemento);
-            return true;
-        }
-
-        return false;
+        return set.insert(elemento);
     }
 
     public void remove(T elemento) {
         set.remove(elemento);
     }
 
-    public void removeIndex(int index) {
-        set.removeIndex(index);
-    }
-
     public boolean isEmpty() {
-        return set.isEmpty();
-    }
-
-    private boolean contains(T elemento) {
-        if (!set.isEmpty()) {
-            for (int i = 0; i < set.size(); i++) {
-                var el = set.getElement(i);
-                if (el.hashCode() == elemento.hashCode()) {
-                    return true;
-                }
-            }
-        }
-        return false;
+        return set.size() == 0;
     }
 
     @Override
