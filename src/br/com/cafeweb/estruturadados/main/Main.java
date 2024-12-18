@@ -1,5 +1,7 @@
 package br.com.cafeweb.estruturadados.main;
 
+import br.com.cafeweb.estruturadados.arvore.Arvore;
+import br.com.cafeweb.estruturadados.arvore.NoArvore;
 import br.com.cafeweb.estruturadados.conjuntos.Conjunto;
 import br.com.cafeweb.estruturadados.espalhamento.TabelaEspalhamento;
 import br.com.cafeweb.estruturadados.filas.Fila;
@@ -20,6 +22,7 @@ public class Main {
         System.out.println("5. Fila");
         System.out.println("6. Conjuntos (sets)");
         System.out.println("7. Mapas");
+        System.out.println("8. Árvore");
         Scanner scanner = new Scanner(System.in);
         System.out.print("Selecione a opção: ");
         var option = scanner.nextLine();
@@ -45,6 +48,9 @@ public class Main {
                 break;
             case "7":
                 mapa();
+                break;
+            case "8":
+                arvore();
                 break;
         }
         scanner.close();
@@ -178,5 +184,16 @@ public class Main {
         System.out.println(mapa.insert("dez", 100));
         mapa.remove("dez");
         System.out.println(mapa);
+    }
+
+    public static void arvore() {
+        Arvore<Integer> numbers = new Arvore<Integer>();
+        numbers.insert(new NoArvore<Integer>(10));
+        numbers.insert(new NoArvore<Integer>(20));
+        numbers.insert(new NoArvore<Integer>(30));
+        numbers.insert(new NoArvore<Integer>(31));
+        numbers.insert(new NoArvore<Integer>(25));
+        numbers.insert(new NoArvore<>(5));
+        System.out.println(numbers);
     }
 }
