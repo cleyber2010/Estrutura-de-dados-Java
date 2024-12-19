@@ -194,6 +194,8 @@ public class Main {
         numbers.insert(new NoArvore<Integer>(31));
         numbers.insert(new NoArvore<Integer>(25));
         numbers.insert(new NoArvore<>(5));
+        System.out.println("=============== Busca =================");
+        System.out.println(numbers.search(new NoArvore<>(31)));
         System.out.println(numbers);
     }
 }
