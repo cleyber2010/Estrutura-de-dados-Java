@@ -72,6 +72,10 @@ public class Arvore<T> {
         this.posOrder(this.root);
     }
 
+    public int height() {
+       return this.height(this.root);
+    }
+
     private void inOrder(NoArvore<T> node) {
         if (node.getLeftNode() != null) {
             inOrder(node.getLeftNode());
@@ -87,15 +91,7 @@ public class Arvore<T> {
         }
     }
 
-    /**
-     *         10
-     *       5    20
-     *      2       30
-     *     1       25   31
-     *
-     * @param node
-     *  10, 5, 2, 1, 20, 30, 25, 31
-     */
+
 
     private void preOrder(NoArvore<T> node) {
         System.out.println(node.getValue());
@@ -111,15 +107,6 @@ public class Arvore<T> {
         }
     }
 
-    /**
-     *          10
-     *       5      20
-     *     2            30
-     *   1            25   31
-     *
-     * @param node
-     *  1, 2, 5, 31, 25, 30, 20, 10
-     */
 
     private void posOrder(NoArvore<T> node) {
         if (node.getLeftNode() != null) {
@@ -136,6 +123,16 @@ public class Arvore<T> {
                 System.out.println(node.getValue().toString());
             }
         }
+    }
+
+
+    private int height(NoArvore<T> node) {
+        if (node == null) {
+            return -1;
+        }
+        int leftHeight = height(node.getLeftNode());
+        int rightHeight = height(node.getRightNode());
+        return Math.max(leftHeight, rightHeight) + 1;
     }
 
     @Override

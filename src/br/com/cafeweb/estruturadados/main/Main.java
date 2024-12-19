@@ -208,5 +208,8 @@ public class Main {
 
         System.out.println("================= Pos Ordem ======================");
         numbers.posOrder();
+
+        System.out.println("===================== Altura da árvore ======================");
+        System.out.println(numbers.height());
     }
 }
