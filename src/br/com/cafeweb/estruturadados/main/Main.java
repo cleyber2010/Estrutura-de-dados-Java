@@ -205,5 +205,8 @@ public class Main {
 
         System.out.println("================= Pré Ordem =======================");
         numbers.preOrder();
+
+        System.out.println("================= Pos Ordem ======================");
+        numbers.posOrder();
     }
 }
