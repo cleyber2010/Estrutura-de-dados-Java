@@ -34,6 +34,31 @@ public class Arvore<T> {
         }
     }
 
+    public NoArvore<T> search(NoArvore<T> node) {
+        return this.search(this.root, node);
+    }
+
+    private NoArvore<T> search(NoArvore<T> node, NoArvore<T> searchNode) {
+        if (node.getValue().equals(searchNode.getValue())) {
+            return node;
+        }
+        if (node.hash() < searchNode.hash()) {
+            if (node.getRightNode() == null) {
+                return null;
+            } else {
+                System.out.println(">>> Navegando a direita do nó " + node.getValue().toString());
+                return search(node.getRightNode(), searchNode);
+            }
+        } else {
+            if (node.getLeftNode() == null) {
+               return null;
+            } else {
+                System.out.println("<<< Navegando a esquerda do nó " + node.getValue().toString());
+                return search(node.getLeftNode(), searchNode);
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Arvore{" +
