@@ -200,7 +200,10 @@ public class Main {
         System.out.println(numbers.search(new NoArvore<>(31)));
         System.out.println(numbers);
 
-        System.out.println("================ Imprimindo em Ordem Crescente ====================");
+        System.out.println("================ Em Ordem ====================");
         numbers.inOrder();
+
+        System.out.println("================= Pré Ordem =======================");
+        numbers.preOrder();
     }
 }

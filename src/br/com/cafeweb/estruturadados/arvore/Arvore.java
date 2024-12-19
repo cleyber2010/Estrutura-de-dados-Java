@@ -64,6 +64,10 @@ public class Arvore<T> {
         return;
     }
 
+    public void preOrder() {
+        this.preOrder(this.root);
+    }
+
     private void inOrder(NoArvore<T> node) {
         if (node.getLeftNode() != null) {
             inOrder(node.getLeftNode());
@@ -75,6 +79,30 @@ public class Arvore<T> {
             System.out.println(node.getValue().toString());
             if (node.getRightNode() != null) {
                 inOrder(node.getRightNode());
+            }
+        }
+    }
+
+    /**
+     *         10
+     *       5    20
+     *      2       30
+     *     1       25   31
+     *
+     * @param node
+     *  10, 5, 2, 1, 20, 30, 25, 31
+     */
+
+    private void preOrder(NoArvore<T> node) {
+        System.out.println(node.getValue());
+        if (node.getLeftNode() != null) {
+            preOrder(node.getLeftNode());
+            if (node.getRightNode() != null) {
+                preOrder(node.getRightNode());
+            }
+        } else {
+            if (node.getRightNode() != null) {
+                preOrder(node.getRightNode());
             }
         }
     }
