@@ -59,6 +59,26 @@ public class Arvore<T> {
         }
     }
 
+    public void inOrder() {
+        this.inOrder(this.root);
+        return;
+    }
+
+    private void inOrder(NoArvore<T> node) {
+        if (node.getLeftNode() != null) {
+            inOrder(node.getLeftNode());
+            System.out.println(node.getValue());
+            if (node.getRightNode() != null) {
+                inOrder(node.getRightNode());
+            }
+        } else {
+            System.out.println(node.getValue().toString());
+            if (node.getRightNode() != null) {
+                inOrder(node.getRightNode());
+            }
+        }
+    }
+
     @Override
     public String toString() {
         return "Arvore{" +

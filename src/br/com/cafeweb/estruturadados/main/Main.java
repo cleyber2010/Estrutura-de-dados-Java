@@ -194,8 +194,13 @@ public class Main {
         numbers.insert(new NoArvore<Integer>(31));
         numbers.insert(new NoArvore<Integer>(25));
         numbers.insert(new NoArvore<>(5));
+        numbers.insert(new NoArvore<>(2));
+        numbers.insert(new NoArvore<>(1));
         System.out.println("=============== Busca =================");
         System.out.println(numbers.search(new NoArvore<>(31)));
         System.out.println(numbers);
+
+        System.out.println("================ Imprimindo em Ordem Crescente ====================");
+        numbers.inOrder();
     }
 }
